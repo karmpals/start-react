@@ -8,10 +8,10 @@ const List = () => {
   const handleClick =(direction) =>{
     let distance = listRef.current.getBoundingClientRect().x-58
     if(direction === "left"){
-      listRef.current.style.transform = 'translateX(230px)"+"$distance'
+      listRef.current.style.transform = 'translateX(${230 + distance}px)'
     }
     if(direction === "right"){
-      listRef.current.style.transform = 'translateX(${-230 - distance}px)'
+      listRef.current.style.transform = 'translateX(${-230 + distance}px)'
     }
   }
   return (
