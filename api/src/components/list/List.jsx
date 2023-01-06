@@ -26,16 +26,16 @@ const [slideNumber, setSlideNumber] = useState(0)
       <div className="wrapper">
         <FaAngleLeft className="sliderArrow left" onClick={()=>handleClick("left")} style={{display:!isMoved && "none"}} />
         <div className="container" ref={listRef}>
-            <Listitem />
-            <Listitem />
-            <Listitem />
-            <Listitem />
-            <Listitem />
-            <Listitem />
-            <Listitem />
-            <Listitem />
-            <Listitem />
-            <Listitem />
+            <Listitem index={11} />
+            <Listitem index={1} />
+            <Listitem index={2} />
+            <Listitem index={3} />
+            <Listitem index={4} />
+            <Listitem index={5} />
+            <Listitem index={6} />
+            <Listitem index={7} />
+            <Listitem index={8} />
+            <Listitem index={9} />
         </div>
         <FaAngleRight className="sliderArrow right" onClick={()=>handleClick("right")}/>
       </div>
