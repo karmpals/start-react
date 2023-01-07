@@ -22,7 +22,7 @@ const Navbar = () => {
               <FaSearch className="icon"/> 
              <span>Kids</span> 
              <FaBell className="icon"/>
-             <img src="https://media.istockphoto.com/photos/funky-young-girl-picture-id1224048781?b=1&k=20&m=1224048781&s=612x612&w=0&h=UK2nqXDO98a_0oHFrZ8tDaYAzf2D7iSoWB4n3rV6ZqM=" alt="" />
+             <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" />
             <div className="profile">
               <FaCaretDown className="icon"/>
               <div className="options">
