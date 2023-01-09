@@ -8,11 +8,11 @@ import WidgetSm from "../../widgetSm/WidgetSm";
 const Home = () => {
   return (
     <div className="home">
-      <FeaturedInfo/>
-      <Chart data={userData} title="User Analytics" grid dataKey="Active_User"/>
+      <FeaturedInfo />
+      <Chart data={userData} title="User Analytics" grid dataKey="Active_User" />
       <div className="homeWidgets">
-        <WidgetSm/>
-        <WidgetLg/>
+        <WidgetSm />
+        <WidgetLg />
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import "./sidebar.css"
 import React from 'react'
 import {  FaRegChartBar, FaComments, FaInfoCircle, FaPoll,FaStore , FaBriefcase, FaChartLine, FaHome, FaRegCommentAlt ,FaRegUser,FaRegEnvelope, FaRupeeSign } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 const Sliderbar = () => {
   return (
@@ -26,14 +27,18 @@ const Sliderbar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
+            <Link to="/users" className="link">
             <li className="sidebarListItem ">
               <FaRegUser className="sidebarIcon"/>
               Users
             </li>
+            </Link>
+            <Link to="/products" className="link">
             <li className="sidebarListItem">
               <FaStore className="sidebarIcon"/>
               Product
             </li>
+            </Link> 
             <li className="sidebarListItem">
               <FaRupeeSign className="sidebarIcon"/>
               Transactions
