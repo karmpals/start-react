@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Listitem from "../listitem/Listitem";
 import "./list.scss";
 
@@ -24,7 +24,7 @@ const [slideNumber, setSlideNumber] = useState(0)
     <div className="list">
       <span className="listTitle">Continue to watch</span>
       <div className="wrapper">
-        <FaAngleLeft className="sliderArrow left" onClick={()=>handleClick("left")} style={{display:!isMoved && "none"}} />
+        <FaChevronLeft className="sliderArrow left" onClick={()=>handleClick("left")} style={{display:!isMoved && "none"}} />
         <div className="container" ref={listRef}>
             <Listitem index={11} />
             <Listitem index={1} />
@@ -37,7 +37,7 @@ const [slideNumber, setSlideNumber] = useState(0)
             <Listitem index={8} />
             <Listitem index={9} />
         </div>
-        <FaAngleRight className="sliderArrow right" onClick={()=>handleClick("right")}/>
+        <FaChevronRight className="sliderArrow right" onClick={()=>handleClick("right")}/>
       </div>
     </div>
   )

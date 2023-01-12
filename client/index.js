@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
+const movieRoute = require('./routes/movies');
+const listRoute = require('./routes/lists');
 
 dotenv.config();
 
@@ -16,8 +18,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/netflix', {
 app.use(express.json());
 
 app.use("/client/auth", authRoute);
-app.use("/client/users", userRoute);
+app.use("/client/users" , userRoute);
+app.use("/client/movies" , movieRoute);
+app.use("/client/lists" , listRoute);
 
-app.listen(5000, () => {
+app.listen(8800, () => {
     console.log("app is working....")
 })

@@ -8,6 +8,12 @@
     background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.3) 50%);
     top: 0;
 
+    .logo{
+        font-weight: bold;
+        font-size: 30px;
+        color: red;
+        cursor: pointer;
+    }
     &.scrolled{
         background-color: var(--main-color);
     }

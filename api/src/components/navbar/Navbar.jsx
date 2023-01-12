@@ -1,6 +1,7 @@
 import "./navbar.scss";
 import { FaSearch, FaBell, FaCaretDown } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   window.onscroll =()=>{
@@ -11,10 +12,17 @@ const Navbar = () => {
     <div className={isScrolled ? "navbar scrolled" : "navbar"}>
       <div className="container">
         <div className="left">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="" />
+            {/* <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="" /> */}
+            <span className="logo">Karmpal</span>
+            <Link to="/" className="link">
             <span>Homepage</span>
+            </Link>
+            <Link to="/movies" className="link">
             <span>Movies</span>
+            </Link>
+            <Link to="/series" className="link">
             <span>Series</span>
+            </Link>
             <span>New & Popular</span>
             <span>My List</span>
         </div>
