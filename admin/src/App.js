@@ -9,26 +9,8 @@ import NewUser from "./components/pages/newUser/NewUser";
 import ProductList from "./components/pages/productList/ProductList";
 import Product from "./components/pages/product/Product";
 import NewProduct from "./components/pages/newProduct/NewProduct";
-import { useEffect, useState } from "react";
-import axios from 'axios';
 function App() {
-  const MONTHS= ["Jan", "Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-
-  const [userStats, setUserStats] = useState([]);
-
-  // useEffect(()=>{
-  //   const getStats = async ()=>{
-  //     try {
-        
-  //       const res = await axios.get("/users/stats",{headers:{token:""},
-  //     });
-  //     setUserStats(res.data);
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   };
-  //   getStats();
-  // }, []);
+  
   return (
     <div className="App">
       <BrowserRouter>

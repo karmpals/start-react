@@ -43,5 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"https://localhost:8800/client/"
+  "proxy":"http://localhost:8800/client/"
 }
