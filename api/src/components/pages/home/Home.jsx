@@ -12,7 +12,7 @@ const Home = ({type}) => {
   useEffect(()=>{
     const getRandomLists = async ()=>{
       try {
-         const res = await axios.get(`lists ${type ? "?type=" +type: ""} ${genre ? "&genre=" + genre:""}`,
+         const res = await axios.get(`http://localhost:8800/client/lists${type ? "?type=" +type: ""} ${genre ? "&genre=" + genre:""}`,
          {
           headers:{
             token:
