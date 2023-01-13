@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoute = require('./routes/auth');
@@ -17,6 +18,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/netflix', {
 
 app.use(express.json());
 
+app.use(cors());
+app.options('*', cors());
 app.use("/client/auth", authRoute);
 app.use("/client/users" , userRoute);
 app.use("/client/movies" , movieRoute);
