@@ -28,7 +28,7 @@ router.delete("/:id", verify, async (req, res) => {
     }
 });
 
-router.get("/", async(req,res)=>{
+router.get("/",verify, async(req,res)=>{
     const typeQuery = req.query.type;
     const genreQuery = req.query.genre;
     let list = [];
@@ -42,12 +42,12 @@ router.get("/", async(req,res)=>{
                 ])
             } else{
                 list = await List.aggregate([
-                    {$sample:{size:10}},
-                    {$match:{type:typeQuery}}
-                ])
+                    { $sample: { size:10}},
+                    { $match:{ type:typeQuery}} 
+                ]);
             }
         } else{
-            list = await List.aggregate([{ $sample:{size:10}}])
+            list = await List.aggregate([{ $sample:{ size:10}}])
         }
         res.status(200).json(list);
     } catch (err) {

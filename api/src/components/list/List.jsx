@@ -26,7 +26,7 @@ const [slideNumber, setSlideNumber] = useState(0)
       <div className="wrapper">
         <FaChevronLeft className="sliderArrow left" onClick={()=>handleClick("left")} style={{display:!isMoved && "none"}} />
         <div className="container" ref={listRef}>
-            <Listitem index={11} />
+            <Listitem index={0} />
             <Listitem index={1} />
             <Listitem index={2} />
             <Listitem index={3} />
@@ -36,6 +36,7 @@ const [slideNumber, setSlideNumber] = useState(0)
             <Listitem index={7} />
             <Listitem index={8} />
             <Listitem index={9} />
+            <Listitem index={10} />
         </div>
         <FaChevronRight className="sliderArrow right" onClick={()=>handleClick("right")}/>
       </div>

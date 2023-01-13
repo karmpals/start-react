@@ -5,11 +5,11 @@ import Login from "./components/pages/login/Login"
 import Register from "./components/pages/register/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
-  const user = true
+  const user = true;
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ user ? (<Home />) : (<Register/>)} />
+        <Route exact path="/" element={ user ? (<Home />) : (<Register/>)} />
         <Route path="/register" element={!user ? (<Register />) : (<Home/>)} />
         <Route path="/login" element={!user ? (<Login />) : (<Home/>)} />
         <Route path="/watch" element={user ? (<Watch />) : (<Register/>)} />

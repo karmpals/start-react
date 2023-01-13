@@ -20,7 +20,7 @@ router.post("/register", async (req, res)=>{
     }
 });
 
-router.post("login", async (req, res)=>{
+router.post("/login", async (req, res)=>{
     try{
         const user = await User.findOne({email:req.body.email});
         !user && res.status(401).json("Invalid username or password");
@@ -34,6 +34,7 @@ router.post("login", async (req, res)=>{
         const{password, ...info} = user._doc;
 
         res.status(200).json({...info, accessToken});
+        // res.status(200).json(info);
 
     }
     catch(err){

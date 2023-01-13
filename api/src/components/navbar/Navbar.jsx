@@ -23,8 +23,8 @@ const Navbar = () => {
             <Link to="/series" className="link">
             <span>Series</span>
             </Link>
-            <span>New & Popular</span>
-            <span>My List</span>
+            {/* <span>New & Popular</span>
+            <span>My List</span> */}
         </div>
         <div className="right">
               <FaSearch className="icon"/> 

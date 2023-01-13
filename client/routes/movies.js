@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../models/Movie');
+const Movie = require('../models/Movie');
 const verify = require('../models/verifyToken');
 
 router.post("/", verify, async (req, res) => {
@@ -66,26 +66,25 @@ router.get("/find/:id", verify, async (req, res) => {
         }
 });
 
-router.get("/random", verify, async (req, res) => {
+router.get("/random", verify, async (req, res)=>{
     const type = req.query.type;
-        try {
-            if(type === "series"){
-                movie = await Movie.aggregate([
-                    { $match : {isSeries:true}},
-                    {$sample: {$size: 1}}
-                ])
-            } else{
-                movie = await Movie.aggregate([
-                    { $match : {isSeries:false}},
-                    {$sample: {$size: 1}}
-                ])
-            }
-            res.status(200).json(movie);
-        } catch (err) {
-            res.status(500).json(err)
-        }
+    let movie;
+    try {
+        if(type === "series"){
+            movie = await Movie.aggregate([
+                { $match: { isSeries: true}},
+                { $sample: { size: 1}},
+            ]);
+        } else{
+            movie = await Movie.aggregate([
+                { $match: { isSeries: false}},
+                { $sample: { size: 1}},
+            ]);
+        }  
+        res.status(200).json(movie)
+    } catch (err) {
+        res.status(500).json(err)
+    }
 });
-
-
 
 module.exports = router;
