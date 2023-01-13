@@ -2,8 +2,22 @@ import "./widgetSm.css";
  
 import React from 'react'
 import { FaEye } from "react-icons/fa";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 const WidgetSm = () => {
+    const [newUsers, setNewUsers]= useState([]);
+
+    useEffect(()=>{
+        const getNewUsers = async ()=>{
+            try {
+                const res = await axios.get("/users?new=true",)
+            } catch (err) {
+                console.log(err);
+            }
+        }
+    },[]);
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>
