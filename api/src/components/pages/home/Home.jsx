@@ -19,7 +19,6 @@ const Home = ({type}) => {
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzBkZTNkNWQ0ODAxZGVmODk5MTUyMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MzYwMzY1MiwiZXhwIjoxNjc0MDM1NjUyfQ.VB6TS1Iwh4Fl51MVxwaWSMVtE4F47aC8JJ_tEdqPszs"
           }
          });
-         console.log(res.data);
          setLists(res.data);
       } catch (err) {
         console.log(err)
@@ -31,7 +30,9 @@ const Home = ({type}) => {
     <div className='home'>
         <Navbar />
         <Featured  type={type}/>
-        <List />
+        {lists.map((list)=>(
+          <List list={list} />
+        ))}
     </div>
   )
 }

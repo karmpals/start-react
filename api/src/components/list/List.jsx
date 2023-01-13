@@ -3,7 +3,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Listitem from "../listitem/Listitem";
 import "./list.scss";
 
-const List = () => {
+const List = ({list}) => {
 const [isMoved, setIsMoved] = useState(false)
 const [slideNumber, setSlideNumber] = useState(0)
 
@@ -22,21 +22,13 @@ const [slideNumber, setSlideNumber] = useState(0)
   }
   return (
     <div className="list">
-      <span className="listTitle">Continue to watch</span>
+      <span className="listTitle">{list.title}</span>
       <div className="wrapper">
         <FaChevronLeft className="sliderArrow left" onClick={()=>handleClick("left")} style={{display:!isMoved && "none"}} />
         <div className="container" ref={listRef}>
-            <Listitem index={0} />
-            <Listitem index={1} />
-            <Listitem index={2} />
-            <Listitem index={3} />
-            <Listitem index={4} />
-            <Listitem index={5} />
-            <Listitem index={6} />
-            <Listitem index={7} />
-            <Listitem index={8} />
-            <Listitem index={9} />
-            <Listitem index={10} />
+          {list.content.map((item, i) =>(
+            <Listitem index={i} item={item} />
+          ))}
         </div>
         <FaChevronRight className="sliderArrow right" onClick={()=>handleClick("right")}/>
       </div>

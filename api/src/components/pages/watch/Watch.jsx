@@ -1,13 +1,18 @@
 import "./watch.scss";
-import {FaArrowLeft} from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+
 const Wacth = () => {
+  const location = useLocation();
+  const movies = location.movies;
   return (
     <div className="watch">
+      <Link to="/">
         <div className="back">
-            <FaArrowLeft/>
-            Home
+          <FaArrowLeft />
         </div>
-        <video className="video" autoPlay progress controls src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=1398&oauth2_token_id57447761"/>
+      </Link>
+      <video className="video" autoPlay progress controls src={movies.video} />
     </div>
   )
 }
