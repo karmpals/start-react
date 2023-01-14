@@ -10,7 +10,7 @@ const Featured = ({type}) => {
     useEffect(()=>{
        const getRandomContent = async()=>{
         try {
-            const res = await axios.get(`/movies/random?type=${type}`,{
+            const res = await axios.get(`http://localhost:8800/client/movies/random?type=${type}`,{
                 headers: {
                   token : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzBkZTNkNWQ0ODAxZGVmODk5MTUyMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MzYwMzY1MiwiZXhwIjoxNjc0MDM1NjUyfQ.VB6TS1Iwh4Fl51MVxwaWSMVtE4F47aC8JJ_tEdqPszs"
                 },
