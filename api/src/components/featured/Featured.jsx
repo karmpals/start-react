@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react"
 import { FaInfoCircle, FaPlay } from "react-icons/fa"
-import "./featured.scss"
+import "./featured.scss";
+import {Link} from 'react-router-dom';
 
 const Featured = ({type}) => {
     const [content, setContent] = useState({});
@@ -50,10 +51,12 @@ const Featured = ({type}) => {
             <img src={content.imgTitle} alt="" />
             <span className="desc">{content.desc}</span>
             <div className="buttons">
+                <Link to="/watch" className="link">
                 <button className="play">
                     <FaPlay />
                     <span>Play</span>
                 </button>
+                </Link>
                 <button className="more">
                 <FaInfoCircle />
                     <span>Info</span>
