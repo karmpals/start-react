@@ -30,8 +30,8 @@ const Home = ({type}) => {
     <div className='home'>
         <Navbar />
         <Featured  type={type}/>
-        {lists.map((list)=>(
-          <List list={list} />
+        {lists.map((list, index)=>(
+          <List key={index} list={list} />
         ))}
     </div>
   )
