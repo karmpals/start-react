@@ -1,13 +1,23 @@
 import "./watch.scss";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import MoviesService from "../../../services/movies";
 
 const Watch = () => {
-  const location = useLocation();
+  
+  const params = useParams();
   // console.log(location);
-  const movies = location.movies;
-  const movie = useState();
+  const movieId = params.movieId;
+  const[movie, setMovie] = useState({});
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await MoviesService.getMovieById(movieId);
+      setMovie(response);
+    }
+    fetchMyAPI();
+    
+ }, [])
 
 
   return (

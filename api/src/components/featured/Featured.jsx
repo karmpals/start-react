@@ -51,7 +51,7 @@ const Featured = ({type}) => {
             <img src={content.imgTitle} alt="" />
             <span className="desc">{content.desc}</span>
             <div className="buttons">
-                <Link to="/watch" className="link">
+                <Link to={`/watch/${content._id}`} className="link">
                 <button className="play">
                     <FaPlay />
                     <span>Play</span>
