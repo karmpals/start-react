@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/" element={ user ? (<Home />) : (<Register/>)} />
         <Route path="/register" element={!user ? (<Register />) : (<Home/>)} />
         <Route path="/login" element={!user ? (<Login />) : (<Home/>)} />
-        <Route path="/watch" element={user ? (<Watch />) : (<Register/>)} />
+        <Route path="/watch/:movieId" element={user ? (<Watch />) : (<Register/>)} />
         <Route path="/movies" element={user ? (<Home type="movies" />) : (<Register/>)} />
         <Route path="/series" element={user ? (<Home type="series" />) : (<Register/>)} />
       </Routes>
