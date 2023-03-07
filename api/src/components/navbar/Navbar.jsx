@@ -13,15 +13,15 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
             {/* <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="" /> */}
-            <span className="logo">Karmpal</span>
+            <span className="logo navbarmainlinks">Karmpal</span>
             <Link to="/" className="link">
             <span>Homepage</span>
             </Link>
             <Link to="/movies" className="link">
-            <span>Movies</span>
+            <span className="navbarmainlinks">Movies</span>
             </Link>
             <Link to="/series" className="link">
-            <span>Series</span>
+            <span className="navbarmainlinks">Series</span>
             </Link>
             {/* <span>New & Popular</span>
             <span>My List</span> */}

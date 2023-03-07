@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .navbar {
     color: white;
     font-size: 14px;
@@ -13,6 +15,10 @@
         font-size: 30px;
         color: red;
         cursor: pointer;
+
+        @include mobile{
+            display: none;
+        }
     }
     &.scrolled{
         background-color: var(--main-color);
@@ -27,13 +33,19 @@
         .left {
             display: flex;
             align-items: center;
-            img {
-                height: 25px;
-                margin-right: 40px;
-            }
+
             span{
                 margin-right: 20px;
                 cursor: pointer;
+                @include tablet{
+                    display: none;
+                }
+
+                &.navbarmainlinks{
+                    @include tablet{
+                        display: block;
+                    }
+                }
             }
         }
 
